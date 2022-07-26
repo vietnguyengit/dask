@@ -2234,7 +2234,7 @@ class Array(DaskMethodsMixin):
         """
         # Scalars don't take `casting` or `copy` kwargs - as such we only pass
         # them to `map_blocks` if specified by user (different than defaults).
-        extra = set(kwargs) - {"casting", "copy"}
+        extra = set(kwargs) - {"casting", "copy", "order"}
         if extra:
             raise TypeError(
                 f"astype does not take the following keyword arguments: {list(extra)}"
